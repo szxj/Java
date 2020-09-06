@@ -10,6 +10,7 @@ import org.jsoup.select.Elements;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Date;
 
 /**
  * @author suzhouxj
@@ -110,5 +111,16 @@ public class JsoupTest {
 
         //任意组合 标签span 属性abc class=s1
         document.select("span[abc].s1").text();
+
+        //查找某个元素下的直接子元素
+        document.select(".city_con > ul > li").text();
+
+        //查找某个元素下的所有子元素
+        document.select(".city_con li").text();
+
+        //查找某个元素下的所有直接子元素
+        document.select(".city_con > *");
+
+
     }
 }
