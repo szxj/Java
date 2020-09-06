@@ -11,7 +11,7 @@ import java.net.URL;
 
 public class JDKAPITest {
     public static void main(String[] args) throws IOException {
-       // toGet();
+        toGet();
        // toPost();
     }
 
