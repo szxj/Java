@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+	namespace一般指定为当前文件的所在包路径+文件名
+	将来在程序中通过[ namespace + id ]定位到执行哪一条SQL语句
+ -->
+<mapper namespace="com.szxj.db.mapper.EmpMapper">
+    <resultMap id = "result" type = "com.szxj.db.entity.emp">
+        <result property = "id" column = "id"/>
+        <result property = "name" column = "name"/>
+        <result property = "job" column = "job"/>
+        <result property = "salary" column = "salary"/>
+    </resultMap>
+
+    <select id="getAll" resultMap="result">
+        select * from emp
+    </select>
+
+    <insert id="insertOne">
+        insert into emp(name, job,salary)
+        values (#{name}, #{job}, #{salary})
+    </insert>
+
+    <update id="updateOne">
+        update emp set name=#{name}, job=#{job}, salary=#{salary}  where id = #{id}
+    </update>
+
+    <delete id="delectOne">
+        delete from emp where id = #{id}
+    </delete>
+</mapper>
