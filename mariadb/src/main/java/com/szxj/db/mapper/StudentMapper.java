@@ -12,6 +12,4 @@ import java.util.List;
 public interface StudentMapper {
 
     List<student> getAll();
-
-
 }
